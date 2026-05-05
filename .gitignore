@@ -1,0 +1,10 @@
+.agent/
+.DS_Store
+node_modules/
+.env
+.tempmediaStorage/
+browser/
+scratch/
+walkthrough.md
+*.png
+*.webp
