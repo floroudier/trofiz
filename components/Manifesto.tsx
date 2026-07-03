@@ -10,7 +10,7 @@ export default function Manifesto() {
         </div>
 
         <blockquote style={{ color: "var(--charcoal)" }} className="text-xl md:text-3xl font-light leading-relaxed mb-8">
-          "Des milliers de clubs franciliens font vivre le sport de quartier.{" "}
+          "Des milliers de clubs locaux font vivre le sport de territoire.{" "}
           <span style={{ color: "var(--bordeaux)" }} className="font-medium">
             Ils manquent de moyens, pas de valeur.
           </span>"

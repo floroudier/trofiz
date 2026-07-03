@@ -3,10 +3,10 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Trofiz — Sports Tech",
-  description: "Trofiz connecte les clubs sportifs amateurs d'Île-de-France avec les entreprises qui veulent s'ancrer dans leur territoire.",
+  description: "Trofiz connecte les clubs sportifs amateurs avec les entreprises qui veulent s'ancrer dans leur territoire.",
   openGraph: {
     title: "Trofiz — Sports Tech",
-    description: "Le lien entre clubs sportifs amateurs et entreprises sponsors en Île-de-France.",
+    description: "Le lien entre clubs sportifs amateurs et entreprises qui veulent s'ancrer dans leur territoire.",
     locale: "fr_FR",
     type: "website",
   },
