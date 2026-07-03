@@ -9,7 +9,7 @@ export default function Manifesto() {
           Notre conviction
         </div>
 
-        <blockquote style={{ color: "var(--charcoal)" }} className="text-2xl md:text-3xl font-light leading-relaxed mb-8">
+        <blockquote style={{ color: "var(--charcoal)" }} className="text-xl md:text-3xl font-light leading-relaxed mb-8">
           "Des milliers de clubs franciliens font vivre le sport de quartier.{" "}
           <span style={{ color: "var(--bordeaux)" }} className="font-medium">
             Ils manquent de moyens, pas de valeur.

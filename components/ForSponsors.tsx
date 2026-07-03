@@ -45,7 +45,7 @@ export default function ForSponsors({ onCtaClick }: ForSponsorsProps) {
           >
             Pour les entreprises
           </div>
-          <h2 style={{ color: "var(--charcoal)" }} className="text-3xl font-semibold mb-6 leading-snug">
+          <h2 style={{ color: "var(--charcoal)" }} className="text-2xl md:text-3xl font-semibold mb-6 leading-snug">
             Un investissement local avec un retour fiscal immédiat.
           </h2>
           <p style={{ color: "var(--text-mid)" }} className="text-base leading-relaxed mb-8">

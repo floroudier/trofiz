@@ -14,40 +14,41 @@ export default function Hero({ onClubClick, onSponsorClick }: HeroProps) {
           Sport amateur
         </div>
 
-        <h1 className="text-white text-3xl md:text-4xl font-semibold leading-tight mb-6 whitespace-nowrap">
-          Le sport local, <em style={{ color: "var(--gold)" }} className="not-italic">levier de croissance partagée.</em>
+        <h1 className="text-white text-2xl sm:text-3xl md:text-4xl font-semibold leading-tight mb-6">
+          Le sport local,{" "}
+          <em style={{ color: "var(--gold)" }} className="not-italic">levier de croissance partagée.</em>
         </h1>
 
-        <p className="text-white/65 text-lg leading-relaxed max-w-xl mx-auto mb-10">
+        <p className="text-white/65 text-base leading-relaxed max-w-xl mx-auto mb-10 px-2">
           Trofiz connecte les clubs de football, basketball, handball et bien d'autres
-          avec les entreprises qui veulent s'ancrer dans leur territoire. Ensemble, on fait avancer quelque chose.
+          avec les entreprises qui veulent s'ancrer dans leur territoire.
         </p>
 
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+        <div className="flex flex-col sm:flex-row gap-3 justify-center px-4">
           <button
             onClick={() => { onClubClick(); document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" }); }}
             style={{ background: "var(--gold)", color: "var(--bordeaux-dark)" }}
-            className="px-8 py-3 rounded font-semibold text-sm hover:opacity-90 transition-opacity"
+            className="w-full sm:w-auto px-8 py-3 rounded font-semibold text-sm hover:opacity-90 transition-opacity"
           >
             Je représente un club
           </button>
           <button
             onClick={() => { onSponsorClick(); document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" }); }}
-            className="px-8 py-3 rounded font-semibold text-sm border border-white/30 text-white hover:bg-white/10 transition-colors"
+            className="w-full sm:w-auto px-8 py-3 rounded font-semibold text-sm border border-white/30 text-white hover:bg-white/10 transition-colors"
           >
             Je suis une entreprise
           </button>
         </div>
 
-        <div className="flex justify-center gap-12 mt-16 pt-10 border-t border-white/10">
+        <div className="flex justify-center gap-6 sm:gap-12 mt-12 pt-8 border-t border-white/10">
           {[
             { val: "60%", label: "Réduction d'impôt" },
             { val: "100%", label: "Clubs amateurs" },
             { val: "Local", label: "Ancrage territorial" },
           ].map(({ val, label }) => (
-            <div key={label}>
-              <div style={{ color: "var(--gold)" }} className="text-2xl font-semibold">{val}</div>
-              <div className="text-white/45 text-xs mt-1 tracking-wide">{label}</div>
+            <div key={label} className="text-center">
+              <div style={{ color: "var(--gold)" }} className="text-xl sm:text-2xl font-semibold">{val}</div>
+              <div className="text-white/45 text-xs mt-1 tracking-wide leading-tight">{label}</div>
             </div>
           ))}
         </div>

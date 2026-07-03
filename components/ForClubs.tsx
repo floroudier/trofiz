@@ -13,7 +13,7 @@ export default function ForClubs({ onCtaClick }: ForClubsProps) {
           >
             Pour les clubs
           </div>
-          <h2 className="text-white text-3xl font-semibold mb-6 leading-snug">
+          <h2 className="text-white text-2xl md:text-3xl font-semibold mb-6 leading-snug">
             Votre club mérite un budget à la hauteur de ce qu'il apporte.
           </h2>
           <p className="text-white/65 text-base leading-relaxed mb-8">
