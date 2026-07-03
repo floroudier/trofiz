@@ -44,7 +44,7 @@ export default function ForClubs({ onCtaClick }: ForClubsProps) {
 
         <div className="space-y-4">
           {[
-            { title: "Clubs omnisports", desc: "Football, basketball, handball, rugby, natation — toutes les disciplines du sport de territoire." },
+            { title: "Clubs omnisports", desc: "Football, basketball, handball, rugby, volley — toutes les disciplines du sport de territoire." },
             { title: "Clubs ancrés localement", desc: "Vous touchez des centaines de licenciés et leurs proches. C'est votre valeur la plus forte." },
             { title: "Clubs sans service commercial", desc: "Vous n'avez pas de chargé de mécénat. Trofiz remplit ce rôle." },
           ].map(({ title, desc }) => (

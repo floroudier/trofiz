@@ -30,13 +30,13 @@ export default function Manifesto() {
             },
             {
               icon: "◆",
-              title: "Le sponsoring local, une opportunité manquée",
+              title: "Le sponsoring local, trop souvent ignoré",
               body: "PME, artisans, commerces — beaucoup ignorent qu'ils peuvent déduire leurs dons sportifs à 60% et gagner en visibilité là où vivent leurs clients.",
             },
           ].map(({ icon, title, body }) => (
             <div key={title} className="flex-1 text-left">
               <div style={{ color: "var(--gold)" }} className="text-lg mb-3">{icon}</div>
-              <h3 style={{ color: "var(--charcoal)" }} className="font-semibold mb-2 text-sm tracking-wide uppercase">{title}</h3>
+              <h3 style={{ color: "var(--charcoal)" }} className="font-semibold mb-2 text-sm tracking-wide uppercase leading-tight">{title}</h3>
               <p style={{ color: "var(--text-mid)" }} className="text-sm leading-relaxed">{body}</p>
             </div>
           ))}

@@ -20,7 +20,7 @@ export default function Hero({ onClubClick, onSponsorClick }: HeroProps) {
         </h1>
 
         <p className="text-white/65 text-base leading-relaxed max-w-xl mx-auto mb-10 px-2">
-          Trofiz connecte les clubs de football, basketball, handball et bien d'autres
+          Trofiz connecte les clubs de sports collectifs
           avec les entreprises qui veulent s'ancrer dans leur territoire.
         </p>
 
