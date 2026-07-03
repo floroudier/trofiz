@@ -14,9 +14,8 @@ export default function Hero({ onClubClick, onSponsorClick }: HeroProps) {
           Sport amateur
         </div>
 
-        <h1 className="text-white text-4xl md:text-5xl font-semibold leading-tight mb-6">
-          Le sport local,{" "}
-          <em style={{ color: "var(--gold)" }} className="not-italic">levier de croissance partagée.</em>
+        <h1 className="text-white text-3xl md:text-4xl font-semibold leading-tight mb-6 whitespace-nowrap">
+          Le sport local, <em style={{ color: "var(--gold)" }} className="not-italic">levier de croissance partagée.</em>
         </h1>
 
         <p className="text-white/65 text-lg leading-relaxed max-w-xl mx-auto mb-10">
@@ -42,7 +41,7 @@ export default function Hero({ onClubClick, onSponsorClick }: HeroProps) {
 
         <div className="flex justify-center gap-12 mt-16 pt-10 border-t border-white/10">
           {[
-            { val: "60%", label: "De réduction d'impôt pour les sponsors" },
+            { val: "60%", label: "Réduction d'impôt" },
             { val: "100%", label: "Clubs amateurs" },
             { val: "Local", label: "Ancrage territorial" },
           ].map(({ val, label }) => (
