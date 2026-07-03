@@ -16,7 +16,7 @@ export default function Footer() {
             </div>
           </div>
           <p className="text-white/40 text-xs max-w-xs leading-relaxed">
-            Connecter les clubs sportifs amateurs d'Île-de-France avec les entreprises qui veulent s'y ancrer.
+            Connecter les clubs sportifs amateurs avec les entreprises qui veulent s'ancrer dans leur territoire.
           </p>
         </div>
 
