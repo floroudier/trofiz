@@ -27,7 +27,7 @@ export async function POST(req: NextRequest) {
 
     await sheets.spreadsheets.values.append({
       spreadsheetId: SHEET_ID,
-      range: "A:H",
+      range: `${type === "club" ? "Clubs" : "Entreprises"}!A:H`,
       valueInputOption: "USER_ENTERED",
       requestBody: {
         values: [[date, type, nom, organisation, email, telephone || "", message || "", "Nouveau"]],
