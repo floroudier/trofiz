@@ -43,7 +43,10 @@ export default function Footer() {
 
       <div className="max-w-5xl mx-auto mt-10 pt-6 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-2">
         <p className="text-white/25 text-xs">© {new Date().getFullYear()} Trofiz. Tous droits réservés.</p>
-        <p className="text-white/25 text-xs">Sport amateur · Sponsoring local · Ancrage territorial</p>
+        <div className="flex items-center gap-4">
+          <a href="/mentions-legales" className="text-white/25 hover:text-white/50 text-xs transition-colors">Mentions légales</a>
+          <p className="text-white/25 text-xs">Sport amateur · Sponsoring local · Ancrage territorial</p>
+        </div>
       </div>
     </footer>
   );
