@@ -35,7 +35,7 @@ export default function MentionsLegales() {
               Code APE : 6202A<br />
               12 Boulevard du Général Leclerc<br />
               92000 Nanterre, France<br /><br />
-              Email : <a href="mailto:floroudier@gmail.com" style={{ color: "var(--bordeaux)" }} className="underline">floroudier@gmail.com</a><br />
+              Email : <a href="mailto:victor@trofiz.com" style={{ color: "var(--bordeaux)" }} className="underline">victor@trofiz.com</a><br />
               Site web : <a href="https://www.trofiz.fr" style={{ color: "var(--bordeaux)" }} className="underline">www.trofiz.fr</a>
             </p>
           </section>
@@ -76,7 +76,7 @@ export default function MentionsLegales() {
             </h2>
             <p style={{ color: "var(--charcoal)" }} className="text-sm leading-relaxed">
               Les informations collectées via le formulaire de contact (nom, organisation, email, téléphone, message) sont utilisées uniquement pour répondre aux demandes des utilisateurs. Elles ne sont ni vendues ni transmises à des tiers.<br /><br />
-              Conformément au Règlement Général sur la Protection des Données (RGPD), vous disposez d'un droit d'accès, de rectification et de suppression de vos données. Pour exercer ce droit, contactez-nous à : <a href="mailto:floroudier@gmail.com" style={{ color: "var(--bordeaux)" }} className="underline">floroudier@gmail.com</a>
+              Conformément au Règlement Général sur la Protection des Données (RGPD), vous disposez d'un droit d'accès, de rectification et de suppression de vos données. Pour exercer ce droit, contactez-nous à : <a href="mailto:victor@trofiz.com" style={{ color: "var(--bordeaux)" }} className="underline">victor@trofiz.com</a>
             </p>
           </section>
 
