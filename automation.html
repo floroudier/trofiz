@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="fr" class="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automation | Trofiz Excellence</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#4a0012', // Deep Bordeaux
+                        'primary-container': '#6b1124',
+                        secondary: '#C5A059', // Matte Gold
+                        'on-surface': '#0F172A', // Ink Black
+                        'on-surface-variant': '#564243',
+                        background: '#F5F5F4', // Heritage Cream
+                        surface: '#F5F5F4',
+                        'surface-container-lowest': '#ffffff',
+                        'surface-container-low': '#f2f3ff',
+                        'surface-container': '#eaedff',
+                        'surface-container-high': '#e2e7ff',
+                        'surface-container-highest': '#dae2fd',
+                    },
+                    fontFamily: {
+                        h1: ['Epilogue', 'sans-serif'],
+                        h2: ['Epilogue', 'sans-serif'],
+                        h3: ['Epilogue', 'sans-serif'],
+                        body: ['Manrope', 'sans-serif'],
+                        numeric: ['Epilogue', 'sans-serif'],
+                        'label-caps': ['Manrope', 'sans-serif'],
+                    },
+                    spacing: {
+                        'margin-page': '64px',
+                        'section-gap': '120px',
+                        'gutter': '24px',
+                    },
+                    borderRadius: {
+                        'xl': '12px',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #F5F5F4;
+            color: #0F172A;
+            font-family: 'Manrope', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .heritage-grain::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.03;
+            pointer-events: none;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3BaseFilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/baseFilter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            z-index: 9999;
+        }
+
+        .leather-texture {
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3BaseFilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/baseFilter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+        }
+
+        .section-fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.8s ease-out;
+        }
+
+        .section-fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="heritage-grain font-body">
+
+    <!-- Top Navigation -->
+    <nav class="fixed top-0 w-full z-[100] bg-white/80 backdrop-blur-md border-b border-on-surface/5">
+        <div class="max-w-[1440px] mx-auto flex justify-between items-center px-margin-page h-20">
+            <a href="index.html" class="flex items-center gap-2">
+                <div class="w-8 h-8 bg-primary rounded-sm flex items-center justify-center">
+                    <span class="text-white font-bold text-lg">T</span>
+                </div>
+                <span class="font-h2 text-2xl font-bold tracking-tight text-primary uppercase">TROFIZ</span>
+            </a>
+            
+            <div class="hidden md:flex items-center space-x-10">
+                <a href="automation.html" class="text-xs font-bold tracking-[0.1em] uppercase text-primary border-b border-secondary pb-1">Automation</a>
+                <a href="compliance.html" class="text-xs font-bold tracking-[0.1em] uppercase hover:text-primary transition-colors">Compliance</a>
+                <a href="network.html" class="text-xs font-bold tracking-[0.1em] uppercase hover:text-primary transition-colors">Network</a>
+                <a href="reporting.html" class="text-xs font-bold tracking-[0.1em] uppercase hover:text-primary transition-colors">Reporting</a>
+            </div>
+
+            <div class="flex items-center gap-6">
+                <button class="bg-primary text-white px-6 py-3 text-xs font-bold tracking-[0.1em] uppercase rounded-sm hover:bg-primary-container transition-all shadow-lg shadow-primary/10">
+                    Demander une démo
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-20">
+        <!-- Hero Section -->
+        <section class="py-section-gap px-margin-page max-w-[1440px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-24 items-center">
+            <div>
+                <span class="text-xs font-bold tracking-[0.3em] uppercase text-secondary mb-6 block">Fluidité Institutionnelle</span>
+                <h1 class="font-h1 text-5xl md:text-6xl text-primary mb-8 leading-tight">L'Automation au service du <span class="italic">prestige</span>.</h1>
+                <p class="font-body text-lg text-on-surface-variant mb-12 leading-relaxed">
+                    Libérez vos équipes des contraintes administratives. Notre moteur intelligent automatise l'intégralité du cycle de vie de vos partenariats, de la signature à la réception des fonds.
+                </p>
+                <div class="flex gap-6">
+                    <button class="bg-primary text-white px-10 py-5 text-sm font-bold tracking-[0.2em] uppercase rounded-sm hover:bg-primary-container transition-all">
+                        Automatiser mon club
+                    </button>
+                </div>
+            </div>
+            <div class="relative">
+                <div class="aspect-[4/5] bg-white rounded-xl border border-on-surface/5 overflow-hidden shadow-2xl relative group">
+                    <img src="public/images/hero.png" alt="Automation Excellence" class="w-full h-full object-cover grayscale-[0.3] group-hover:scale-105 transition-transform duration-1000">
+                    <div class="absolute inset-0 bg-primary/10 mix-blend-multiply"></div>
+                    <!-- Overlay tactile elements -->
+                    <div class="absolute bottom-10 left-10 right-10 bg-white/90 backdrop-blur-md p-8 border border-secondary/20 shadow-xl">
+                        <div class="flex items-center gap-4 mb-4">
+                            <span class="material-symbols-outlined text-secondary">verified</span>
+                            <span class="text-[10px] font-bold tracking-[0.2em] uppercase text-on-surface">Processus Certifié</span>
+                        </div>
+                        <p class="font-h3 text-xl text-primary">Génération de contrat en <span class="italic">45 secondes</span>.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Feature Bento Grid -->
+        <section class="mt-section-gap px-margin-page max-w-[1440px] mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+                <!-- Large Card -->
+                <div class="md:col-span-8 bg-white p-12 border border-on-surface/5 flex flex-col justify-between group rounded-xl hover:shadow-2xl transition-all">
+                    <div>
+                        <span class="text-[10px] font-bold tracking-[0.2em] uppercase text-secondary mb-4 block">01 / CONTRACTUALISATION</span>
+                        <h2 class="font-h2 text-3xl text-primary mb-6">Génération automatique <br/>de contrats intelligents.</h2>
+                        <p class="font-body text-on-surface-variant max-w-lg leading-relaxed">
+                            Nos algorithmes rédigent vos contrats de partenariat en temps réel, intégrant les clauses juridiques de la Loi Aillagon pour une conformité fiscale absolue.
+                        </p>
+                    </div>
+                    <div class="mt-12 overflow-hidden border border-on-surface/10 rounded-lg bg-background">
+                        <div class="p-6 leather-texture bg-primary opacity-5 flex items-center justify-between border-b border-on-surface/5">
+                            <span class="text-xs font-bold tracking-widest uppercase">Draft_Sponsorship_V3.pdf</span>
+                            <span class="material-symbols-outlined text-secondary">stylus</span>
+                        </div>
+                        <div class="p-8 font-serif text-primary/40 leading-relaxed text-sm italic">
+                            ENTRE LE CLUB ATHLÉTIQUE ET LE SPONSOR... <br/>
+                            <span class="text-secondary">Annoté à la main : Approuvé pour défiscalisation.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Small Card -->
+                <div class="md:col-span-4 bg-primary p-12 flex flex-col justify-center text-white rounded-xl">
+                    <span class="material-symbols-outlined text-secondary mb-6 text-5xl">history_edu</span>
+                    <h3 class="font-h3 text-2xl mb-4">Signature Digitale</h3>
+                    <p class="font-body opacity-80 mb-8 leading-relaxed">
+                        Validez vos accords en un clic depuis n'importe quel appareil. Sécurité de grade bancaire intégrée.
+                    </p>
+                    <div class="mt-auto border-t border-white/20 pt-6">
+                        <span class="text-[10px] font-bold tracking-[0.2em] uppercase text-secondary">INTÉGRATION DOCUSIGN</span>
+                    </div>
+                </div>
+
+                <!-- Small Card 2 -->
+                <div class="md:col-span-4 bg-white p-12 flex flex-col border border-on-surface/5 rounded-xl hover:border-secondary/30 transition-colors">
+                    <h3 class="font-h3 text-2xl text-primary mb-6">Suivi des Flux</h3>
+                    <p class="font-body text-on-surface-variant mb-8 leading-relaxed">
+                        Tableau de bord en temps réel des versements donateurs. Alertes automatiques en cas de retard.
+                    </p>
+                    <div class="mt-auto bg-background p-6 rounded-sm border border-secondary/10">
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="text-[10px] font-bold text-primary tracking-widest uppercase">Luxe S.A.</span>
+                            <span class="font-numeric text-secondary font-bold">15 000€</span>
+                        </div>
+                        <div class="w-full bg-white rounded-full h-1">
+                            <div class="bg-secondary h-1 rounded-full" style="width: 85%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Medium Card -->
+                <div class="md:col-span-8 bg-white border border-secondary/20 p-12 relative overflow-hidden rounded-xl group">
+                    <div class="relative z-10">
+                        <span class="text-[10px] font-bold tracking-[0.2em] uppercase text-secondary mb-4 block">MODÈLE ÉCONOMIQUE</span>
+                        <h2 class="font-h2 text-3xl text-primary mb-6">Fluidité des Commissions.</h2>
+                        <p class="font-body text-on-surface-variant max-w-xl leading-relaxed">
+                            Dès réception des fonds par le club, notre système déclenche automatiquement le calcul et le traitement des commissions. Zéro délai, transparence totale.
+                        </p>
+                    </div>
+                    <div class="absolute right-0 top-0 h-full w-1/3 bg-secondary/5 -skew-x-12 transform translate-x-10"></div>
+                    <span class="absolute -right-4 -bottom-4 font-numeric text-[120px] text-secondary/10 font-bold">8%</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final Pass Section -->
+        <section class="mt-section-gap py-32 relative overflow-hidden bg-primary/5">
+            <div class="max-w-[1440px] mx-auto px-margin-page grid grid-cols-1 md:grid-cols-2 items-center gap-24">
+                <div class="order-2 md:order-1">
+                    <img src="public/images/sme.png" alt="Precision" class="shadow-2xl grayscale-[0.3] rounded-xl border border-on-surface/5">
+                </div>
+                <div class="order-1 md:order-2">
+                    <h2 class="font-h1 text-4xl text-primary mb-8">La précision de l'orfèvre, <br/>la vitesse du digital.</h2>
+                    <p class="font-body text-lg text-on-surface-variant mb-12 italic leading-relaxed">
+                        "Nous ne remplaçons pas l'humain, nous le libérons des contraintes pour qu'il se concentre sur l'essentiel : la relation avec ses partenaires."
+                    </p>
+                    <div class="space-y-6">
+                        <div class="flex items-center gap-4">
+                            <span class="material-symbols-outlined text-secondary">check_circle</span>
+                            <span class="font-body">Réduction de 90% des erreurs administratives</span>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <span class="material-symbols-outlined text-secondary">check_circle</span>
+                            <span class="font-body">Déblocage immédiat des reçus fiscaux</span>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <span class="material-symbols-outlined text-secondary">check_circle</span>
+                            <span class="font-body">Suivi KYC automatisé pour la conformité</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Fiscal Calculator Section -->
+        <section class="py-section-gap relative overflow-hidden">
+            <div class="absolute inset-0 bg-primary/5 skew-y-[2deg] origin-left scale-110 -z-10"></div>
+            <div class="max-w-[1440px] mx-auto px-margin-page">
+                <div class="bg-white/80 backdrop-blur-md p-12 md:p-20 rounded-xl border border-on-surface/5 flex flex-col lg:flex-row gap-20 items-center">
+                    <div class="flex-1">
+                        <span class="text-[10px] font-bold tracking-[0.3em] uppercase text-secondary mb-4 block">Simulation Institutionnelle</span>
+                        <h2 class="font-h2 text-4xl text-primary mb-8 leading-tight">Mesurez l'économie <br/>générée par l'Automation.</h2>
+                        <div class="space-y-10">
+                            <div>
+                                <label class="text-[10px] font-bold tracking-[0.3em] text-on-surface-variant/60 uppercase mb-4 block">Montant du partenariat annuel</label>
+                                <div class="flex items-baseline gap-4 border-b border-on-surface/10 pb-4 focus-within:border-primary transition-colors">
+                                    <span class="font-numeric text-3xl opacity-20">€</span>
+                                    <input id="fiscal-amount" type="number" value="10000" class="w-full bg-transparent border-none p-0 font-numeric text-5xl text-on-surface focus:ring-0 focus:outline-none">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-full lg:w-[460px] bg-primary p-12 rounded-xl shadow-2xl">
+                        <div class="space-y-12">
+                            <div class="grid grid-cols-2 gap-8">
+                                <div>
+                                    <p class="text-[9px] font-bold tracking-[0.1em] text-white/40 uppercase mb-2">Économie d'impôt</p>
+                                    <p id="tax-saving" class="font-numeric text-2xl text-secondary">6 000,00 €</p>
+                                </div>
+                                <div>
+                                    <p class="text-[9px] font-bold tracking-[0.1em] text-white/40 uppercase mb-2">Conformité</p>
+                                    <p class="font-numeric text-2xl text-white">100%</p>
+                                </div>
+                            </div>
+                            <div class="bg-white/5 p-8 rounded-sm">
+                                <p class="text-[10px] font-bold tracking-[0.2em] text-white/40 uppercase mb-3 text-center">Coût net réel</p>
+                                <p id="net-cost" class="font-numeric text-5xl text-center text-white leading-none">4 000,00</p>
+                                <p class="text-xl text-white text-center mt-2">€</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="mt-section-gap mb-section-gap text-center max-w-4xl mx-auto px-margin-page">
+            <h2 class="font-h1 text-4xl md:text-5xl text-primary mb-8 leading-tight">Prêt à professionnaliser <br/>votre mécénat ?</h2>
+            <p class="font-body text-lg text-on-surface-variant mb-12">
+                Rejoignez les clubs d'élite qui utilisent Trofiz pour automatiser leur croissance.
+            </p>
+            <button class="bg-primary text-white px-12 py-5 text-sm font-bold tracking-[0.2em] uppercase rounded-sm shadow-2xl hover:scale-105 transition-transform">
+                Prendre rendez-vous avec un conseiller
+            </button>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-on-surface text-white py-24">
+        <div class="max-w-[1440px] mx-auto px-margin-page">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-20">
+                <div class="lg:col-span-5">
+                    <div class="flex items-center gap-2 mb-8">
+                        <div class="w-8 h-8 bg-white/10 rounded-sm flex items-center justify-center">
+                            <span class="text-white font-bold text-lg">T</span>
+                        </div>
+                        <span class="font-h2 text-2xl font-bold tracking-tight uppercase">TROFIZ</span>
+                    </div>
+                    <p class="font-body text-white/50 max-w-sm mb-12 leading-relaxed">
+                        L'excellence au service de la performance sportive. La plateforme de référence pour le pilotage des partenariats.
+                    </p>
+                </div>
+                <div class="lg:col-span-7 grid grid-cols-2 md:grid-cols-3 gap-12">
+                    <div class="flex flex-col gap-6">
+                        <p class="text-[10px] font-bold tracking-[0.3em] uppercase text-secondary">Plateforme</p>
+                        <a href="automation.html" class="text-sm text-white hover:text-secondary transition-colors">Automation</a>
+                        <a href="compliance.html" class="text-sm text-white/50 hover:text-white transition-colors">Compliance</a>
+                        <a href="reporting.html" class="text-sm text-white/50 hover:text-white transition-colors">Reporting</a>
+                        <a href="network.html" class="text-sm text-white/50 hover:text-white transition-colors">Network</a>
+                    </div>
+                    <div class="flex flex-col gap-6">
+                        <p class="text-[10px] font-bold tracking-[0.3em] uppercase text-secondary">Solutions</p>
+                        <a href="#" class="text-sm text-white/50 hover:text-white transition-colors">Clubs Sportifs</a>
+                        <a href="#" class="text-sm text-white/50 hover:text-white transition-colors">PME & Entreprises</a>
+                    </div>
+                    <div class="flex flex-col gap-6">
+                        <p class="text-[10px] font-bold tracking-[0.3em] uppercase text-secondary">Légal</p>
+                        <a href="#" class="text-sm text-white/50 hover:text-white transition-colors">Confidentialité</a>
+                        <a href="#" class="text-sm text-white/50 hover:text-white transition-colors">Contact</a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-24 pt-12 border-t border-white/5 text-center">
+                <p class="text-[10px] font-bold tracking-[0.2em] text-white/30 uppercase">© 2024 Trofiz SAS. Propriété intellectuelle réservée.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="public/js/calculator.js"></script>
+    <script>
+        const observerOptions = { threshold: 0.1 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('visible');
+            });
+        }, observerOptions);
+        document.querySelectorAll('section').forEach(section => {
+            section.classList.add('section-fade-in');
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
