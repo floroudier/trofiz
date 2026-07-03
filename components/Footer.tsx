@@ -35,7 +35,7 @@ export default function Footer() {
             <div style={{ color: "var(--gold)" }} className="text-xs font-medium tracking-widest uppercase mb-3">Contact</div>
             <ul className="space-y-2">
               <li className="text-white/50 text-sm">contact@trofiz.fr</li>
-              <li className="text-white/50 text-sm">Île-de-France</li>
+              <li className="text-white/50 text-sm">France</li>
             </ul>
           </div>
         </div>
@@ -43,7 +43,7 @@ export default function Footer() {
 
       <div className="max-w-5xl mx-auto mt-10 pt-6 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-2">
         <p className="text-white/25 text-xs">© {new Date().getFullYear()} Trofiz. Tous droits réservés.</p>
-        <p className="text-white/25 text-xs">Sport amateur · Île-de-France · Sponsoring local</p>
+        <p className="text-white/25 text-xs">Sport amateur · Sponsoring local · Ancrage territorial</p>
       </div>
     </footer>
   );
