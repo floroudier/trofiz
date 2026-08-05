@@ -71,9 +71,8 @@ export default function FAQ() {
 
               {open === i && (
                 <div
-                  style={{ background: "var(--cream-dark)", color: "var(--text-mid)" }}
+                  style={{ background: "var(--cream-dark)", color: "var(--text-mid)", borderColor: "var(--cream-dark)" }}
                   className="px-5 pb-4 text-sm leading-relaxed border-t"
-                  style={{ borderColor: "var(--cream-dark)" }}
                 >
                   {faq.a}
                 </div>
