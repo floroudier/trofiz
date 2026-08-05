@@ -14,14 +14,14 @@ export default function Hero({ onClubClick, onSponsorClick }: HeroProps) {
           Sport amateur
         </div>
 
-        <h1 className="text-white text-2xl sm:text-3xl md:text-4xl font-semibold leading-tight mb-6">
-          Le sport local,{" "}
-          <em style={{ color: "var(--gold)" }} className="not-italic">levier de croissance partagée.</em>
+        <h1 className="text-white text-2xl sm:text-3xl md:text-4xl font-semibold leading-tight mb-4">
+          Votre entreprise soutient un club local.{" "}
+          <em style={{ color: "var(--gold)" }} className="not-italic">Vous déduisez 60% du montant de vos impôts.</em>
         </h1>
 
         <p className="text-white/65 text-base leading-relaxed max-w-xl mx-auto mb-10 px-2">
-          Trofiz connecte les clubs de sports collectifs
-          avec les entreprises qui veulent s'ancrer dans leur territoire.
+          Trofiz identifie le bon club près de chez vous, structure le partenariat
+          et s'occupe de tout — de la mise en relation au reçu fiscal.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-3 justify-center px-4">
@@ -42,8 +42,8 @@ export default function Hero({ onClubClick, onSponsorClick }: HeroProps) {
 
         <div className="flex justify-center gap-6 sm:gap-12 mt-12 pt-8 border-t border-white/10">
           {[
-            { val: "60%", label: "Réduction d'impôt" },
-            { val: "100%", label: "Clubs amateurs" },
+            { val: "60%", label: "Réduction d'IS — loi Aillagon" },
+            { val: "0€", label: "Pour le club" },
             { val: "Local", label: "Ancrage territorial" },
           ].map(({ val, label }) => (
             <div key={label} className="text-center">
