@@ -30,13 +30,13 @@ export default function Hero({ onClubClick, onSponsorClick }: HeroProps) {
             style={{ background: "var(--gold)", color: "var(--bordeaux-dark)" }}
             className="w-full sm:w-auto px-8 py-3 rounded font-semibold text-sm hover:opacity-90 transition-opacity"
           >
-            Je représente un club
+            Mon club cherche un sponsor →
           </button>
           <button
             onClick={() => { onSponsorClick(); document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" }); }}
             className="w-full sm:w-auto px-8 py-3 rounded font-semibold text-sm border border-white/30 text-white hover:bg-white/10 transition-colors"
           >
-            Je suis une entreprise
+            Je veux sponsoriser un club local →
           </button>
         </div>
 
