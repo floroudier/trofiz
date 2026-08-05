@@ -7,6 +7,7 @@ import Manifesto from "@/components/Manifesto";
 import HowItWorks from "@/components/HowItWorks";
 import ForClubs from "@/components/ForClubs";
 import ForSponsors from "@/components/ForSponsors";
+import FAQ from "@/components/FAQ";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
@@ -24,6 +25,7 @@ export default function Home() {
       <HowItWorks />
       <ForClubs onCtaClick={() => setContactType("club")} />
       <ForSponsors onCtaClick={() => setContactType("entreprise")} />
+      <FAQ />
       <Contact defaultType={contactType} />
       <Footer />
     </main>
