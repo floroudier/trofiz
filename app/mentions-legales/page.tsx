@@ -7,9 +7,22 @@ export const metadata: Metadata = {
   description: "Mentions légales du site trofiz.fr",
 };
 
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Accueil", item: "https://www.trofiz.fr" },
+    { "@type": "ListItem", position: 2, name: "Mentions légales", item: "https://www.trofiz.fr/mentions-legales" },
+  ],
+};
+
 export default function MentionsLegales() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       <Nav />
       <main style={{ background: "var(--cream)" }} className="flex-1 py-16 px-6">
         <div className="max-w-3xl mx-auto">
