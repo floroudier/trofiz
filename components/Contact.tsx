@@ -49,8 +49,11 @@ export default function Contact({ defaultType }: ContactProps) {
             Contact
           </div>
           <h2 style={{ color: "var(--charcoal)" }} className="text-3xl font-semibold mb-3">Parlons-en</h2>
-          <p style={{ color: "var(--text-mid)" }} className="text-sm">
-            Un conseiller Trofiz vous répond sous 24h ouvrées.
+          <p style={{ color: "var(--text-mid)" }} className="text-sm mb-1">
+            Premier échange de 20 minutes, sans engagement.
+          </p>
+          <p style={{ color: "var(--text-mid)" }} className="text-sm opacity-70">
+            On vous recontacte sous 24h ouvrées.
           </p>
         </div>
 

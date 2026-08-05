@@ -11,7 +11,7 @@ export default function Nav() {
           <div style={{ background: "var(--gold)", color: "var(--bordeaux-dark)" }} className="w-8 h-8 rounded flex items-center justify-center font-bold text-sm shrink-0">T</div>
           <div>
             <div className="text-white font-bold tracking-widest text-sm leading-none">TROFIZ</div>
-            <div style={{ color: "var(--gold)", fontSize: "9px", letterSpacing: "0.18em" }} className="leading-none mt-0.5">SPORTS TECH</div>
+            <div style={{ color: "var(--gold)", fontSize: "9px", letterSpacing: "0.18em" }} className="leading-none mt-0.5">SPORT & TERRITOIRE</div>
           </div>
         </a>
 

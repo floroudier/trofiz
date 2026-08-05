@@ -12,7 +12,7 @@ export default function Footer() {
             </div>
             <div>
               <div className="font-semibold tracking-wider text-sm">TROFIZ</div>
-              <div style={{ color: "var(--gold)", fontSize: "10px", letterSpacing: "0.1em" }}>SPORTS TECH</div>
+              <div style={{ color: "var(--gold)", fontSize: "10px", letterSpacing: "0.1em" }}>SPORT & TERRITOIRE</div>
             </div>
           </div>
           <p className="text-white/40 text-xs max-w-xs leading-relaxed">
