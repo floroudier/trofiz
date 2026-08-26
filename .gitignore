@@ -39,3 +39,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# language tutor personal data (not project code, keep local)
+/Language-Tutor/
