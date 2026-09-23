@@ -10,7 +10,7 @@ interface LegalPageProps {
   sections: LegalSection[];
 }
 
-// Mise en page commune aux pages légales (confidentialité, CGU), alignée sur les mentions légales.
+// Mise en page commune aux pages légales (mentions, confidentialité, CGU) : bandeau nuit, sections numérotées sur papier.
 export default function LegalPage({ title, path, intro, sections }: LegalPageProps) {
   const breadcrumb = {
     "@context": "https://schema.org",
@@ -25,16 +25,26 @@ export default function LegalPage({ title, path, intro, sections }: LegalPagePro
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
       <Nav />
-      <main style={{ background: "var(--cream)" }} className="flex-1 py-16 px-6">
-        <div className="max-w-3xl mx-auto">
-          <h1 style={{ color: "var(--bordeaux)" }} className="text-3xl font-bold mb-2">{title}</h1>
-          <div style={{ color: "var(--text-mid)" }} className="text-sm mb-10">{intro}</div>
-          {sections.map(({ title: heading, body }) => (
-            <section key={heading} className="mb-8">
-              <h2 style={{ color: "var(--bordeaux)" }} className="text-lg font-semibold mb-3">{heading}</h2>
-              <div style={{ color: "var(--charcoal)" }} className="text-sm leading-relaxed space-y-3">{body}</div>
-            </section>
-          ))}
+      <main className="flex-1">
+        <header className="grain px-4 sm:px-8 pt-16 pb-14 sm:pt-20 sm:pb-16" style={{ background: "var(--nuit)", color: "var(--craie)" }}>
+          <div className="max-w-3xl mx-auto">
+            <p className="t-label kicker" style={{ color: "var(--or-vif)" }}>Informations légales</p>
+            <h1 className="t-h2 mt-6 text-[clamp(40px,6vw,64px)]">{title}</h1>
+            <div className="mt-5 text-[15px] leading-relaxed max-w-[60ch]" style={{ color: "var(--craie-muted)" }}>{intro}</div>
+          </div>
+        </header>
+        <div className="grain px-4 sm:px-8 py-14 sm:py-20" style={{ background: "var(--papier)", color: "var(--encre)" }}>
+          <div className="max-w-3xl mx-auto">
+            {sections.map(({ title: heading, body }, i) => (
+              <section key={heading} className="grid sm:grid-cols-[64px_1fr] gap-x-6 py-8 border-t first:border-t-0 first:pt-0 border-[var(--papier-line)]">
+                <span className="t-label text-[12px] pt-2" style={{ color: "var(--or-encre)" }} aria-hidden="true">{String(i + 1).padStart(2, "0")}</span>
+                <div>
+                  <h2 className="t-h2 text-[28px] sm:text-[32px] mb-3" style={{ color: "var(--club)" }}>{heading}</h2>
+                  <div className="text-[15px] leading-relaxed space-y-3">{body}</div>
+                </div>
+              </section>
+            ))}
+          </div>
         </div>
       </main>
       <Footer />
@@ -42,4 +52,4 @@ export default function LegalPage({ title, path, intro, sections }: LegalPagePro
   );
 }
 
-export const linkStyle = { color: "var(--bordeaux)" };
+export const linkStyle = { color: "var(--club)" };
