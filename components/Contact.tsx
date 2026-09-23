@@ -36,120 +36,81 @@ export default function Contact({ defaultType }: ContactProps) {
     }
   };
 
-  const inputClass = "w-full px-4 py-3 rounded text-sm border outline-none transition-colors";
-  const inputStyle = { borderColor: "var(--cream-dark)", background: "white", color: "var(--charcoal)" };
-  const labelClass = "block text-sm font-medium mb-1.5";
-  const labelStyle = { color: "var(--charcoal)" };
+  // Champs soulignés à l’encre ; au focus, soulignement bordeaux et trait or
+  const inputClass = "w-full px-4 py-3.5 text-[15px] border-0 border-b-2 border-[var(--encre)] outline-none focus:border-[var(--club)] focus:shadow-[inset_0_-3px_0_var(--or)] transition-colors";
+  const inputStyle = { background: "var(--craie)", color: "var(--encre)" };
+  const labelClass = "block text-[13px] font-semibold mb-2";
 
   return (
-    <section id="contact" style={{ background: "var(--cream)" }} className="py-20 px-6">
-      <div className="max-w-xl mx-auto">
-        <div className="text-center mb-10">
-          <div
-            style={{ color: "var(--gold-ink)", borderColor: "var(--gold-ink)" }}
-            className="inline-block text-xs font-medium tracking-widest uppercase border px-4 py-1.5 rounded-full mb-6"
-          >
-            Contact
-          </div>
-          <h2 style={{ color: "var(--charcoal)" }} className="text-3xl font-semibold mb-3">Parlons-en</h2>
-          <p style={{ color: "var(--text-mid)" }} className="text-sm">
-            Un premier échange sans engagement, pour les clubs comme pour les entreprises.
+    <section id="contact" className="grain px-4 sm:px-8 py-20 sm:py-28" style={{ background: "var(--nuit)", color: "var(--craie)" }}>
+      <div className="max-w-[1200px] mx-auto grid lg:grid-cols-[.9fr_1.1fr] gap-12 items-start">
+        <div>
+          <p className="t-label kicker" style={{ color: "var(--or-vif)" }}>Contact</p>
+          <h2 className="t-h2 mt-6 text-[clamp(48px,7vw,88px)]">Parlons-en<span style={{ color: "var(--or)" }}>.</span></h2>
+          <p className="mt-6 max-w-[38ch] text-[17px] leading-relaxed" style={{ color: "var(--craie-muted)" }}>
+            Un premier échange sans engagement, pour les clubs comme pour les entreprises. Dites-nous qui vous êtes et ce que vous cherchez.
           </p>
         </div>
 
         {status === "sent" ? (
-          <div
-            role="status"
-            style={{ background: "var(--bordeaux)", color: "white" }}
-            className="rounded-lg p-10 text-center"
-          >
-            <div aria-hidden="true" style={{ color: "var(--gold-bright)" }} className="text-3xl mb-4">✓</div>
-            <h3 className="font-semibold text-lg mb-2">Demande envoyée</h3>
-            <p className="text-white/80 text-sm">Merci. Nous revenons vers vous pour organiser un premier échange.</p>
+          <div role="status" className="p-10" style={{ background: "var(--club)" }}>
+            <p className="t-h2 text-4xl">Demande envoyée<span style={{ color: "var(--or-vif)" }}>.</span></p>
+            <p className="mt-3 text-sm" style={{ color: "var(--craie-muted)" }}>Merci. Nous revenons vers vous pour organiser un premier échange.</p>
           </div>
         ) : (
-          <form onSubmit={handleSubmit} className="space-y-4">
-            <div role="group" aria-label="Vous êtes" className="flex rounded overflow-hidden border" style={{ borderColor: "var(--cream-dark)" }}>
+          <form onSubmit={handleSubmit} className="p-6 sm:p-8 space-y-5" style={{ background: "var(--papier)", color: "var(--encre)" }}>
+            <div role="group" aria-label="Vous êtes" className="inline-grid grid-cols-2 p-1 w-full sm:w-auto" style={{ background: "var(--nuit)" }}>
               {(["club", "entreprise"] as const).map((t) => (
-                <button
-                  key={t}
-                  type="button"
-                  aria-pressed={type === t}
-                  onClick={() => setType(t)}
-                  className="flex-1 py-2.5 text-sm font-medium transition-colors"
-                  style={
-                    type === t
-                      ? { background: "var(--bordeaux)", color: "white" }
-                      : { background: "var(--cream-dark)", color: "var(--text-mid)" }
-                  }
-                >
-                  {t === "club" ? "Je représente un club" : "Je représente une entreprise"}
+                <button key={t} type="button" aria-pressed={type === t} onClick={() => setType(t)}
+                  className="px-4 sm:px-5 py-2.5 text-[13px] font-semibold transition-colors"
+                  style={type === t
+                    ? { background: "var(--craie)", color: "var(--nuit)", clipPath: "polygon(8px 0, 100% 0, calc(100% - 8px) 100%, 0 100%)" }
+                    : { color: "var(--craie-muted)" }}>
+                  {t === "club" ? "Je suis un club" : "Je suis une entreprise"}
                 </button>
               ))}
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
               <div>
-                <label htmlFor="contact-nom" className={labelClass} style={labelStyle}>Nom et prénom</label>
-                <input id="contact-nom" name="nom" autoComplete="name" required value={form.nom} onChange={handleChange}
-                  style={inputStyle} className={inputClass} />
+                <label htmlFor="contact-nom" className={labelClass}>Nom et prénom</label>
+                <input id="contact-nom" name="nom" autoComplete="name" required value={form.nom} onChange={handleChange} style={inputStyle} className={inputClass} />
               </div>
               <div>
-                <label htmlFor="contact-organisation" className={labelClass} style={labelStyle}>
-                  {type === "club" ? "Nom du club" : "Entreprise"}
-                </label>
-                <input id="contact-organisation" name="organisation" autoComplete="organization" required value={form.organisation}
-                  onChange={handleChange} style={inputStyle} className={inputClass} />
+                <label htmlFor="contact-organisation" className={labelClass}>{type === "club" ? "Nom du club" : "Entreprise"}</label>
+                <input id="contact-organisation" name="organisation" autoComplete="organization" required value={form.organisation} onChange={handleChange} style={inputStyle} className={inputClass} />
+              </div>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              <div>
+                <label htmlFor="contact-email" className={labelClass}>Adresse email</label>
+                <input id="contact-email" name="email" type="email" autoComplete="email" required value={form.email} onChange={handleChange} style={inputStyle} className={inputClass} />
+              </div>
+              <div>
+                <label htmlFor="contact-telephone" className={labelClass}>Téléphone <span className="font-normal" style={{ color: "var(--gris)" }}>(facultatif)</span></label>
+                <input id="contact-telephone" name="telephone" type="tel" autoComplete="tel" value={form.telephone} onChange={handleChange} style={inputStyle} className={inputClass} />
               </div>
             </div>
             <div>
-              <label htmlFor="contact-email" className={labelClass} style={labelStyle}>Adresse email</label>
-              <input id="contact-email" name="email" type="email" autoComplete="email" required value={form.email} onChange={handleChange}
-                style={inputStyle} className={inputClass} />
-            </div>
-            <div>
-              <label htmlFor="contact-telephone" className={labelClass} style={labelStyle}>
-                Téléphone <span style={{ color: "var(--text-mid)" }} className="font-normal">(facultatif)</span>
-              </label>
-              <input id="contact-telephone" name="telephone" type="tel" autoComplete="tel" value={form.telephone} onChange={handleChange}
-                style={inputStyle} className={inputClass} />
-            </div>
-            <div>
-              <label htmlFor="contact-message" className={labelClass} style={labelStyle}>
-                Votre message <span style={{ color: "var(--text-mid)" }} className="font-normal">(facultatif)</span>
-              </label>
-              <textarea
-                id="contact-message"
-                name="message"
+              <label htmlFor="contact-message" className={labelClass}>Votre message <span className="font-normal" style={{ color: "var(--gris)" }}>(facultatif)</span></label>
+              <textarea id="contact-message" name="message" rows={4} value={form.message} onChange={handleChange}
                 placeholder={type === "club" ? "Votre club, votre ville, vos besoins pour la saison…" : "Votre entreprise, votre ville, ce que vous recherchez…"}
-                rows={4}
-                value={form.message}
-                onChange={handleChange}
-                style={{ ...inputStyle, resize: "none" }}
-                className={inputClass}
-              />
+                style={{ ...inputStyle, resize: "none" }} className={inputClass} />
             </div>
 
             {status === "error" && (
-              <p role="alert" className="text-red-700 text-sm">
+              <p role="alert" className="text-sm" style={{ color: "#B3261E" }}>
                 L’envoi n’a pas abouti. Vérifiez votre connexion et réessayez, ou écrivez-nous à contact@trofiz.fr.
               </p>
             )}
 
-            <button
-              type="submit"
-              disabled={status === "sending"}
-              style={{ background: "var(--bordeaux)", color: "white" }}
-              className="w-full py-3 rounded font-semibold text-sm hover:opacity-90 transition-opacity disabled:opacity-60"
-            >
-              {status === "sending" ? "Envoi en cours…" : "Envoyer ma demande"}
+            <button type="submit" disabled={status === "sending"} className="btn btn-club w-full sm:w-auto">
+              {status === "sending" ? "Envoi en cours…" : "Envoyer ma demande"} <span className="arr" aria-hidden="true">→</span>
             </button>
 
-            <p style={{ color: "var(--text-mid)" }} className="text-xs leading-relaxed">
+            <p className="text-xs leading-relaxed" style={{ color: "var(--gris)" }}>
               Vos informations servent uniquement à répondre à votre demande. Elles ne sont ni vendues ni cédées.{" "}
-              <a href="/confidentialite" style={{ color: "var(--bordeaux)" }} className="underline">
-                En savoir plus sur vos données
-              </a>
+              <a href="/confidentialite" className="underline" style={{ color: "var(--club)" }}>En savoir plus sur vos données</a>
             </p>
           </form>
         )}

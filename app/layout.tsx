@@ -1,5 +1,15 @@
 import type { Metadata } from "next";
+import { Archivo } from "next/font/google";
 import "./globals.css";
+
+// Archivo variable avec son axe de largeur (62 à 125 %) : condensé pour les titres, étendu pour les étiquettes
+const archivo = Archivo({
+  subsets: ["latin"],
+  style: ["normal", "italic"],
+  axes: ["wdth"],
+  variable: "--font-archivo",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "Trofiz · Mécénat et partenariat sportif local",
@@ -103,7 +113,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="fr" className="h-full">
+    <html lang="fr" className={`h-full ${archivo.variable}`}>
       <head>
         <script
           type="application/ld+json"

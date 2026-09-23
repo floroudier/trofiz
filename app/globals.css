@@ -1,37 +1,138 @@
 @import "tailwindcss";
 
+/* Direction artistique V2 « le terrain, l’affiche, le trophée » — mêmes jetons que le design system Figma V2 */
 :root {
-  --bordeaux: #6B1535;
-  --bordeaux-dark: #4E0F26;
-  --gold: #C4973A;
-  --charcoal: #1A1A1A;
-  --cream: #F0EAD6;
-  --cream-dark: #E8E0C8;
-  --text-mid: #5a4a3a;
-  /* Or foncé pour le texte doré sur fond clair : l'or #C4973A n'y atteint que 2,2:1 (WCAG demande 4,5:1) */
-  --gold-ink: #7D5A1A;
-  /* Or pour le texte sur fond bordeaux : #C4973A n'y atteint que 4,39:1 */
-  --gold-bright: #CCA146;
-}
+  --nuit: #22060F;          /* fonds de scène */
+  --nuit-line: #412931;     /* lignes sur la nuit */
+  --club: #6B1535;          /* couleur du maillot */
+  --club-2: #4E0F26;
+  --club-500: #8A2A4D;
+  --papier: #F3EDDC;        /* sections de lecture */
+  --papier-2: #E8DFC6;
+  --papier-line: #D0CABB;
+  --craie: #FFFDF7;         /* texte et lignes sur fond sombre */
+  --craie-muted: #D7D2D4;
+  --or: #C4973A;            /* l’or se gagne : action principale, résultats, points finaux (≤ 10 % d’un écran) */
+  --or-hover: #D6AA4C;
+  --or-vif: #CCA146;        /* or lisible sur bordeaux et nuit (4,9:1 et 7,9:1) */
+  --or-encre: #7D5A1A;      /* or lisible sur papier (5,4:1) */
+  --encre: #1A1411;
+  --gris: #6B5D50;
 
-/* Focus clavier visible partout : anneau or + halo bordeaux foncé, lisible sur fond clair comme sombre */
-:focus-visible {
-  outline: 3px solid var(--gold);
-  outline-offset: 2px;
-  box-shadow: 0 0 0 7px var(--bordeaux-dark);
+  /* Alias V1, encore utilisés par les pages légales */
+  --bordeaux: var(--club);
+  --bordeaux-dark: var(--club-2);
+  --gold: var(--or);
+  --gold-ink: var(--or-encre);
+  --gold-bright: var(--or-vif);
+  --charcoal: var(--encre);
+  --cream: var(--papier);
+  --cream-dark: var(--papier-2);
+  --text-mid: var(--gris);
+
+  --elan: 12px;             /* découpe à 12° reprise de la barre du T */
 }
 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
+/* La barre de navigation est collante : les ancres s’arrêtent juste dessous */
+section[id] { scroll-margin-top: 72px; }
 
 body {
-  background-color: var(--cream);
-  color: var(--charcoal);
-  font-family: system-ui, -apple-system, sans-serif;
+  background-color: var(--papier);
+  color: var(--encre);
+  font-family: var(--font-archivo), system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 
-::selection {
-  background: var(--bordeaux);
-  color: white;
+::selection { background: var(--club); color: var(--craie); }
+
+/* Couches Tailwind : les utilitaires (hidden, absolute…) gardent la priorité sur ces styles */
+@layer base {
+  /* Focus clavier visible partout : anneau or + halo nuit, lisible sur fond clair comme sombre */
+  :focus-visible {
+    outline: 3px solid var(--or);
+    outline-offset: 2px;
+    box-shadow: 0 0 0 7px var(--nuit);
+  }
+}
+
+@layer components {
+  /* ---------- Typographie : une famille, trois largeurs ---------- */
+  .t-display {
+    font-stretch: 62%; font-weight: 900; font-style: italic; text-transform: uppercase;
+    line-height: .86; letter-spacing: -.005em;
+  }
+  .t-h2 {
+    font-stretch: 75%; font-weight: 800; font-style: italic; text-transform: uppercase;
+    line-height: .92; text-wrap: balance;
+  }
+  .t-label {
+    font-stretch: 125%; font-weight: 600; font-size: 11px; letter-spacing: .16em; text-transform: uppercase;
+  }
+  .t-stat {
+    font-stretch: 62%; font-weight: 900; font-style: italic; line-height: .9; font-variant-numeric: tabular-nums;
+  }
+  .t-number {
+    font-stretch: 62%; font-weight: 900; font-style: italic; line-height: .8; color: transparent;
+    -webkit-text-stroke: 1.5px var(--club);
+  }
+
+  /* Sur-titre : barre coupée à l’élan + étiquette étendue */
+  .kicker { display: inline-flex; align-items: center; gap: 14px; }
+  .kicker::before { content: ""; width: 34px; height: 3px; background: currentColor; transform: skewX(-12deg); }
+
+  /* ---------- Boutons coupés à l’élan ---------- */
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 12px;
+    padding: 16px 30px 16px 26px; border: 0; cursor: pointer; text-decoration: none;
+    font-stretch: 100%; font-weight: 700; font-size: 15px; letter-spacing: .01em; line-height: 1.2;
+    clip-path: polygon(var(--elan) 0, 100% 0, calc(100% - var(--elan)) 100%, 0 100%);
+    transition: background-color .2s ease;
+  }
+  .btn .arr { transition: transform .2s ease; }
+  .btn:hover .arr { transform: translateX(4px); }
+  /* L’anneau extérieur serait rogné par la découpe : le focus des boutons se dessine à l’intérieur */
+  .btn:focus-visible { outline: none; box-shadow: inset 0 0 0 3px var(--nuit), inset 0 0 0 5px var(--craie); }
+  .btn-or { background: var(--or); color: var(--nuit); }
+  .btn-or:hover { background: var(--or-hover); }
+  .btn-club { background: var(--club); color: var(--craie); }
+  .btn-club:hover { background: var(--club-500); }
+  .btn-craie { background: transparent; color: var(--craie); box-shadow: inset 0 0 0 1.5px rgba(255, 253, 247, .7); }
+  .btn-craie:hover { background: rgba(255, 253, 247, .08); }
+  .btn-craie:focus-visible { box-shadow: inset 0 0 0 3px var(--or); }
+  .btn:disabled { opacity: .6; cursor: default; }
+
+  /* Puce coupée à l’élan */
+  .puce { flex: none; width: 9px; height: 9px; margin-top: 7px; background: currentColor; transform: skewX(-12deg); }
+
+  /* ---------- Grain papier, presque invisible ---------- */
+  .grain { position: relative; isolation: isolate; }
+  .grain::after {
+    content: ""; position: absolute; inset: 0; pointer-events: none; z-index: 1; opacity: .07; mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  /* Le contenu passe au-dessus du grain ; les SVG décoratifs (lignes de terrain) restent en position absolue */
+  .grain > :not(svg) { position: relative; z-index: 2; }
+
+  /* ---------- Billets de match ---------- */
+  .billet {
+    --encoche: 14px; --talon: 64px;
+    display: grid; grid-template-columns: 1fr var(--talon);
+    -webkit-mask:
+      radial-gradient(circle var(--encoche) at calc(100% - var(--talon)) 0, #0000 98%, #000) top / 100% 51% no-repeat,
+      radial-gradient(circle var(--encoche) at calc(100% - var(--talon)) 100%, #0000 98%, #000) bottom / 100% 51% no-repeat;
+    mask:
+      radial-gradient(circle var(--encoche) at calc(100% - var(--talon)) 0, #0000 98%, #000) top / 100% 51% no-repeat,
+      radial-gradient(circle var(--encoche) at calc(100% - var(--talon)) 100%, #0000 98%, #000) bottom / 100% 51% no-repeat;
+  }
+  .billet-talon { writing-mode: vertical-rl; transform: rotate(180deg); }
+
+  /* Curseur du simulateur */
+  .sim-range { width: 100%; accent-color: var(--club); height: 28px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .btn, .btn .arr { transition: none; }
 }
