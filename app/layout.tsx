@@ -2,12 +2,11 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Trofiz — Sponsoring & mécénat sportif local | Réduction d'impôt 60%",
-  description: "Trofiz met en relation les clubs sportifs amateurs et les entreprises locales. Bénéficiez de 60% de réduction d'IS via la loi Aillagon. Premier échange sans engagement.",
-  keywords: ["mécénat sportif", "sponsoring club amateur", "loi Aillagon", "réduction impôt sport", "partenariat sportif local", "club sportif financement", "mécénat PME", "sponsoring local entreprise"],
+  title: "Trofiz · Mécénat et partenariat sportif local",
+  description: "Trofiz relie les clubs sportifs amateurs et les entreprises de leur territoire, et sécurise le montage : mécénat, partenariat ou les deux. Premier échange sans engagement.",
   openGraph: {
-    title: "Trofiz — Sponsoring & mécénat sportif local",
-    description: "Soutenez un club sportif près de chez vous et déduisez 60% du montant de vos impôts. Trofiz s'occupe de tout.",
+    title: "Trofiz · Mécénat et partenariat sportif local",
+    description: "Clubs amateurs et entreprises locales : on crée le partenariat, on sécurise le montage.",
     locale: "fr_FR",
     type: "website",
     url: "https://www.trofiz.fr",
@@ -17,14 +16,14 @@ export const metadata: Metadata = {
         url: "https://www.trofiz.fr/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Trofiz — Sponsoring & mécénat sportif local",
+        alt: "Trofiz · Mécénat et partenariat sportif local",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Trofiz — Sponsoring & mécénat sportif local",
-    description: "Soutenez un club sportif près de chez vous et déduisez 60% du montant de vos impôts.",
+    title: "Trofiz · Mécénat et partenariat sportif local",
+    description: "Clubs amateurs et entreprises locales : on crée le partenariat, on sécurise le montage.",
     images: ["https://www.trofiz.fr/og-image.png"],
   },
   alternates: {
@@ -51,8 +50,8 @@ const jsonLd = [
     url: "https://www.trofiz.fr",
     logo: "https://www.trofiz.fr/logo.png",
     image: "https://www.trofiz.fr/og-image.png",
-    description: "Trofiz met en relation les clubs sportifs amateurs et les entreprises locales via le mécénat sportif (loi Aillagon). Réduction d'IS de 60% pour les entreprises.",
-    email: "victor@trofiz.com",
+    description: "Trofiz met en relation les clubs sportifs amateurs et les entreprises de leur territoire, et sécurise le montage du partenariat : mécénat (don avec reçu fiscal), partenariat (visibilité facturée) ou les deux.",
+    email: "contact@trofiz.fr",
     address: {
       "@type": "PostalAddress",
       streetAddress: "12 Boulevard du Général Leclerc",
@@ -69,31 +68,30 @@ const jsonLd = [
       "@type": "Person",
       name: "Florian Roudier",
     },
-    areaServed: {
-      "@type": "Country",
-      name: "France",
-    },
-    priceRange: "€€",
+    areaServed: [
+      { "@type": "State", name: "Île-de-France" },
+      { "@type": "Country", name: "France" },
+    ],
     sameAs: ["https://www.trofiz.fr"],
   },
   {
     "@context": "https://schema.org",
     "@type": "Service",
-    name: "Mise en relation mécénat sportif",
+    name: "Mise en relation et montage de partenariats sportifs",
     provider: {
       "@type": "LocalBusiness",
       name: "Trofiz",
       url: "https://www.trofiz.fr",
     },
-    description: "Trofiz identifie les clubs sportifs amateurs adaptés à votre territoire et structure le partenariat de mécénat ou de sponsoring, de la mise en relation au reçu fiscal Cerfa.",
-    serviceType: "Mécénat sportif et sponsoring local",
+    description: "Trofiz identifie le club ou l'entreprise partenaire adapté, choisit la formule (mécénat, partenariat ou les deux), vérifie l'éligibilité du club au reçu fiscal et prépare les contrats.",
+    serviceType: "Mécénat et partenariat sportif local",
     areaServed: {
       "@type": "Country",
       name: "France",
     },
     offers: {
       "@type": "Offer",
-      description: "Premier échange de 20 minutes sans engagement. Commission uniquement sur partenariat conclu.",
+      description: "Premier échange sans engagement. Pour le club, rien à payer avant la signature d'un partenariat.",
       priceCurrency: "EUR",
     },
   },

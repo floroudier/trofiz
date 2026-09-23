@@ -12,8 +12,8 @@ export default function Footer() {
               <div style={{ color: "var(--gold)", fontSize: "10px", letterSpacing: "0.1em" }} className="mt-1">SPORT & TERRITOIRE</div>
             </div>
           </div>
-          <p className="text-white/40 text-xs max-w-xs leading-relaxed">
-            Connecter les clubs sportifs amateurs avec les entreprises qui veulent s'ancrer dans leur territoire.
+          <p className="text-white/70 text-xs max-w-xs leading-relaxed">
+            Connecter les clubs sportifs amateurs avec les entreprises qui veulent s’ancrer dans leur territoire.
           </p>
         </div>
 
@@ -23,7 +23,7 @@ export default function Footer() {
             <ul className="space-y-2">
               {[["#clubs", "Clubs"], ["#entreprises", "Entreprises"], ["#comment", "Comment ça marche"], ["#contact", "Contact"]].map(([href, label]) => (
                 <li key={href}>
-                  <a href={href} className="text-white/50 hover:text-white text-sm transition-colors">{label}</a>
+                  <a href={href} className="text-white/75 hover:text-white text-sm transition-colors">{label}</a>
                 </li>
               ))}
             </ul>
@@ -31,18 +31,18 @@ export default function Footer() {
           <div>
             <div style={{ color: "var(--gold)" }} className="text-xs font-medium tracking-widest uppercase mb-3">Contact</div>
             <ul className="space-y-2">
-              <li className="text-white/50 text-sm">contact@trofiz.fr</li>
-              <li className="text-white/50 text-sm">France</li>
+              <li className="text-white/75 text-sm">contact@trofiz.fr</li>
+              <li className="text-white/75 text-sm">Île-de-France et partout en France</li>
             </ul>
           </div>
         </div>
       </div>
 
       <div className="max-w-5xl mx-auto mt-10 pt-6 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-2">
-        <p className="text-white/25 text-xs">© {new Date().getFullYear()} Trofiz. Tous droits réservés.</p>
+        <p className="text-white/60 text-xs">© {new Date().getFullYear()} Trofiz. Tous droits réservés.</p>
         <div className="flex items-center gap-4">
-          <a href="/mentions-legales" className="text-white/25 hover:text-white/50 text-xs transition-colors">Mentions légales</a>
-          <p className="text-white/25 text-xs">Sport amateur · Sponsoring local · Ancrage territorial</p>
+          <a href="/mentions-legales" className="text-white/60 hover:text-white text-xs transition-colors">Mentions légales</a>
+          <p className="text-white/60 text-xs">Sport amateur · Mécénat et partenariat local</p>
         </div>
       </div>
     </footer>

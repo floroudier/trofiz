@@ -10,15 +10,15 @@ export default function Manifesto() {
         </div>
 
         <blockquote style={{ color: "var(--charcoal)" }} className="text-xl md:text-3xl font-light leading-relaxed mb-8">
-          "Des milliers de clubs locaux font vivre le sport de territoire.{" "}
+          « Des milliers de clubs locaux font vivre le sport de territoire.{" "}
           <span style={{ color: "var(--bordeaux)" }} className="font-medium">
             Ils manquent de moyens, pas de valeur.
-          </span>"
+          </span> »
         </blockquote>
 
         <p style={{ color: "var(--text-mid)" }} className="text-base leading-relaxed max-w-xl mx-auto">
-          En face, des entreprises cherchent à s'ancrer dans leur territoire, à valoriser leur image,
-          à bénéficier d'avantages fiscaux. Le lien entre les deux n'existait pas. C'est ce que Trofiz construit.
+          En face, des entreprises cherchent à s’ancrer dans leur territoire, à valoriser leur image,
+          à bénéficier d’avantages fiscaux. Trofiz fait le lien entre les deux, et s’assure que chaque partenariat est bien monté.
         </p>
 
         <div className="flex flex-col md:flex-row gap-8 mt-14 pt-10 border-t" style={{ borderColor: "var(--cream)" }}>
@@ -30,12 +30,12 @@ export default function Manifesto() {
             },
             {
               icon: "◆",
-              title: "Le sponsoring local, trop souvent ignoré",
-              body: "PME, artisans, commerces — beaucoup ignorent qu'ils peuvent déduire leurs dons sportifs à 60% et gagner en visibilité là où vivent leurs clients.",
+              title: "Le soutien local, trop souvent ignoré",
+              body: "PME, artisans, commerces : beaucoup ignorent qu'un don à un club amateur ouvre droit à 60 % de réduction d'impôt, et qu'un partenariat leur offre une visibilité là où vivent leurs clients.",
             },
           ].map(({ icon, title, body }) => (
             <div key={title} className="flex-1 text-left">
-              <div style={{ color: "var(--gold)" }} className="text-lg mb-3">{icon}</div>
+              <div aria-hidden="true" style={{ color: "var(--gold-ink)" }} className="text-lg mb-3">{icon}</div>
               <h2 style={{ color: "var(--charcoal)" }} className="font-semibold mb-2 text-sm tracking-wide uppercase leading-tight">{title}</h2>
               <p style={{ color: "var(--text-mid)" }} className="text-sm leading-relaxed">{body}</p>
             </div>

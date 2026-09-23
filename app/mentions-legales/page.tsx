@@ -48,7 +48,7 @@ export default function MentionsLegales() {
               Code APE : 6202A<br />
               12 Boulevard du Général Leclerc<br />
               92000 Nanterre, France<br /><br />
-              Email : <a href="mailto:victor@trofiz.com" style={{ color: "var(--bordeaux)" }} className="underline">victor@trofiz.com</a><br />
+              Email : <a href="mailto:contact@trofiz.fr" style={{ color: "var(--bordeaux)" }} className="underline">contact@trofiz.fr</a><br />
               Site web : <a href="https://www.trofiz.fr" style={{ color: "var(--bordeaux)" }} className="underline">www.trofiz.fr</a>
             </p>
           </section>
@@ -88,8 +88,8 @@ export default function MentionsLegales() {
               Données personnelles
             </h2>
             <p style={{ color: "var(--charcoal)" }} className="text-sm leading-relaxed">
-              Les informations collectées via le formulaire de contact (nom, organisation, email, téléphone, message) sont utilisées uniquement pour répondre aux demandes des utilisateurs. Elles ne sont ni vendues ni transmises à des tiers.<br /><br />
-              Conformément au Règlement Général sur la Protection des Données (RGPD), vous disposez d'un droit d'accès, de rectification et de suppression de vos données. Pour exercer ce droit, contactez-nous à : <a href="mailto:victor@trofiz.com" style={{ color: "var(--bordeaux)" }} className="underline">victor@trofiz.com</a>
+              Les informations collectées via le formulaire de contact (nom, organisation, email, téléphone, message) sont utilisées uniquement pour répondre aux demandes des utilisateurs et, le cas échéant, préparer une mise en relation entre un club et une entreprise. Elles ne sont ni vendues ni cédées. Elles sont hébergées et traitées par nos sous-traitants techniques : Vercel (hébergement du site), Google (stockage des demandes) et Anthropic (assistant IA qui aide Trofiz à organiser le suivi des demandes). Elles sont conservées au maximum 3 ans après le dernier échange.<br /><br />
+              Conformément au Règlement Général sur la Protection des Données (RGPD), vous disposez d'un droit d'accès, de rectification et de suppression de vos données. Pour exercer ce droit, contactez-nous à : <a href="mailto:contact@trofiz.fr" style={{ color: "var(--bordeaux)" }} className="underline">contact@trofiz.fr</a>
             </p>
           </section>
 

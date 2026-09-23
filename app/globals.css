@@ -8,6 +8,17 @@
   --cream: #F0EAD6;
   --cream-dark: #E8E0C8;
   --text-mid: #5a4a3a;
+  /* Or foncé pour le texte doré sur fond clair : l'or #C4973A n'y atteint que 2,2:1 (WCAG demande 4,5:1) */
+  --gold-ink: #7D5A1A;
+  /* Or pour le texte sur fond bordeaux : #C4973A n'y atteint que 4,39:1 */
+  --gold-bright: #CCA146;
+}
+
+/* Focus clavier visible partout : anneau or + halo bordeaux foncé, lisible sur fond clair comme sombre */
+:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 7px var(--bordeaux-dark);
 }
 
 * { box-sizing: border-box; }

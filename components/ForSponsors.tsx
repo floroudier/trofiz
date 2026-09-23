@@ -2,28 +2,32 @@ interface ForSponsorsProps {
   onCtaClick: () => void;
 }
 
+// Les trois formules : la réduction de 60 % ne concerne que la part don (mécénat, art. 238 bis CGI) ;
+// la visibilité (logo, panneaux) relève du partenariat, facturé et déductible comme une dépense de communication.
+const FORMULES = [
+  {
+    stat: "Don",
+    label: "Mécénat",
+    desc: "60 % de réduction d'impôt, avec un reçu fiscal du club. Un don de 5 000 € vous revient à 2 000 €.",
+  },
+  {
+    stat: "Logo",
+    label: "Partenariat",
+    desc: "Maillots, panneaux, réseaux du club : une prestation facturée par le club, déductible comme une dépense de communication.",
+  },
+  {
+    stat: "Mixte",
+    label: "Les deux",
+    desc: "Un don et un partenariat, en deux contrats séparés : la réduction d'impôt et la visibilité.",
+  },
+];
+
 export default function ForSponsors({ onCtaClick }: ForSponsorsProps) {
   return (
     <section id="entreprises" style={{ background: "var(--cream-dark)" }} className="py-20 px-6">
       <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-14 items-center">
         <div className="space-y-4 order-2 md:order-1">
-          {[
-            {
-              stat: "60%",
-              label: "de réduction d'impôt",
-              desc: "Sur vos dons aux clubs sportifs amateurs via la loi Aillagon.",
-            },
-            {
-              stat: "Local",
-              label: "ancrage territorial",
-              desc: "Une présence visible là où vivent vos collaborateurs, clients et partenaires.",
-            },
-            {
-              stat: "Visible",
-              label: "présence terrain concrète",
-              desc: "Maillots, panneaux, réseaux sociaux du club — votre marque là où la pub classique ne va pas.",
-            },
-          ].map(({ stat, label, desc }) => (
+          {FORMULES.map(({ stat, label, desc }) => (
             <div
               key={label}
               style={{ background: "var(--cream)", borderColor: "var(--cream)" }}
@@ -36,6 +40,9 @@ export default function ForSponsors({ onCtaClick }: ForSponsorsProps) {
               </div>
             </div>
           ))}
+          <p style={{ color: "var(--text-mid)" }} className="text-xs leading-relaxed">
+            Réduction d’impôt dans la limite de 20 000 € ou de 0,5 % du chiffre d’affaires. Chiffres indicatifs, à confirmer avec votre comptable.
+          </p>
         </div>
 
         <div className="order-1 md:order-2">
@@ -46,21 +53,21 @@ export default function ForSponsors({ onCtaClick }: ForSponsorsProps) {
             Pour les entreprises
           </div>
           <h2 style={{ color: "var(--charcoal)" }} className="text-2xl md:text-3xl font-semibold mb-6 leading-snug">
-            Un investissement local avec un retour fiscal immédiat.
+            Votre marque au cœur de votre ville, avec un montage sans risque.
           </h2>
           <p style={{ color: "var(--text-mid)" }} className="text-base leading-relaxed mb-8">
-            Sponsoriser un club sportif, c'est s'ancrer là où vivent vos clients et collaborateurs — tout en bénéficiant
-            d'un avantage fiscal concret. Trofiz sélectionne pour vous les clubs qui correspondent à votre image.
+            Soutenir un club amateur, c’est vous ancrer là où vivent vos clients et vos collaborateurs.
+            Trofiz choisit avec vous le club et la bonne formule, puis prépare des contrats conformes.
           </p>
           <ul className="space-y-3 mb-10">
             {[
-              "Clubs pré-qualifiés selon vos critères",
-              "Calcul de l'avantage fiscal adapté à votre situation",
-              "Convention de partenariat clé en main",
-              "Suivi du partenariat et reporting",
+              "Un club choisi selon votre zone et votre image",
+              "Le coût réel calculé selon votre situation",
+              "Les contrats préparés : convention de mécénat, contrat de partenariat",
+              "L'argent versé directement au club",
             ].map((item) => (
               <li key={item} className="flex items-start gap-3 text-sm" style={{ color: "var(--text-mid)" }}>
-                <span style={{ color: "var(--gold)" }} className="mt-0.5 shrink-0">✓</span>
+                <span aria-hidden="true" style={{ color: "var(--gold-ink)" }} className="mt-0.5 shrink-0">✓</span>
                 {item}
               </li>
             ))}
@@ -70,7 +77,7 @@ export default function ForSponsors({ onCtaClick }: ForSponsorsProps) {
             style={{ background: "var(--bordeaux)", color: "white" }}
             className="px-8 py-3 rounded font-semibold text-sm hover:opacity-90 transition-opacity"
           >
-            Découvrir les opportunités
+            Trouver mon club
           </button>
         </div>
       </div>

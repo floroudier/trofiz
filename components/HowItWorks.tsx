@@ -1,23 +1,23 @@
 const STEPS = [
   {
     num: "01",
-    title: "On analyse",
-    body: "Trofiz cartographie les clubs de votre territoire et sélectionne ceux qui correspondent à votre image, vos valeurs et vos objectifs.",
+    title: "On échange",
+    body: "Un premier échange, sans engagement, pour comprendre le club ou l'entreprise : territoire, budget, objectifs.",
   },
   {
     num: "02",
-    title: "On qualifie",
-    body: "Nous préparons pour vous une présentation claire de chaque opportunité : audience, visibilité terrain, avantages fiscaux applicables.",
+    title: "On propose",
+    body: "Nous identifions le bon partenaire et la bonne formule : mécénat, partenariat ou les deux, avec le coût réel pour l'entreprise.",
   },
   {
     num: "03",
-    title: "On connecte",
-    body: "Trofiz facilite la première prise de contact entre votre entreprise et le club, dans un cadre structuré et bienveillant.",
+    title: "On prépare",
+    body: "Nous vérifions que le club peut émettre un reçu fiscal et préparons les contrats : convention de mécénat, contrat de partenariat.",
   },
   {
     num: "04",
-    title: "On accompagne",
-    body: "Nous restons disponibles pour répondre à vos questions et vous orienter vers les bons interlocuteurs pour formaliser le partenariat.",
+    title: "Vous signez",
+    body: "Le club et l'entreprise signent. L'argent est versé directement au club, et nous restons disponibles pendant la saison.",
   },
 ];
 
@@ -27,7 +27,7 @@ export default function HowItWorks() {
       <div className="max-w-5xl mx-auto">
         <div className="text-center mb-14">
           <div
-            style={{ color: "var(--gold)", borderColor: "var(--gold)" }}
+            style={{ color: "var(--gold-ink)", borderColor: "var(--gold-ink)" }}
             className="inline-block text-xs font-medium tracking-widest uppercase border px-4 py-1.5 rounded-full mb-6"
           >
             Méthode
@@ -39,6 +39,7 @@ export default function HowItWorks() {
           {STEPS.map(({ num, title, body }) => (
             <div key={num} className="relative">
               <div
+                aria-hidden="true"
                 style={{ color: "var(--bordeaux)", opacity: 0.12 }}
                 className="text-7xl font-bold leading-none mb-4 select-none"
               >
