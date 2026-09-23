@@ -1,18 +1,15 @@
+import { TrofizMark, TrofizWordmark } from "./Logo";
+
 export default function Footer() {
   return (
     <footer style={{ background: "var(--charcoal)", color: "white" }} className="py-12 px-6">
       <div className="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-start gap-8">
         <div>
-          <div className="flex items-center gap-3 mb-3">
-            <div
-              style={{ background: "var(--gold)", color: "var(--bordeaux-dark)" }}
-              className="w-7 h-7 rounded flex items-center justify-center font-bold text-xs"
-            >
-              T
-            </div>
+          <div className="flex items-center gap-2 mb-3">
+            <TrofizMark className="h-8 w-auto shrink-0" grooveColor="var(--charcoal)" />
             <div>
-              <div className="font-semibold tracking-wider text-sm">TROFIZ</div>
-              <div style={{ color: "var(--gold)", fontSize: "10px", letterSpacing: "0.1em" }}>SPORT & TERRITOIRE</div>
+              <TrofizWordmark className="h-[18px] w-auto" color="var(--cream)" />
+              <div style={{ color: "var(--gold)", fontSize: "10px", letterSpacing: "0.1em" }} className="mt-1">SPORT & TERRITOIRE</div>
             </div>
           </div>
           <p className="text-white/40 text-xs max-w-xs leading-relaxed">

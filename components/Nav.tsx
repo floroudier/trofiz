@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import { TrofizMark, TrofizWordmark } from "./Logo";
 
 export default function Nav() {
   const [open, setOpen] = useState(false);
@@ -7,11 +8,11 @@ export default function Nav() {
   return (
     <header style={{ background: "var(--bordeaux-dark)" }} className="sticky top-0 z-50">
       <div className="max-w-6xl mx-auto px-6 py-3 flex items-center justify-between">
-        <a href="/" className="flex items-center gap-2.5">
-          <div style={{ background: "var(--gold)", color: "var(--bordeaux-dark)" }} className="w-8 h-8 rounded flex items-center justify-center font-bold text-sm shrink-0">T</div>
+        <a href="/" className="flex items-center gap-2" aria-label="Trofiz, accueil">
+          <TrofizMark className="h-9 w-auto shrink-0" grooveColor="var(--bordeaux-dark)" />
           <div>
-            <div className="text-white font-bold tracking-widest text-sm leading-none">TROFIZ</div>
-            <div style={{ color: "var(--gold)", fontSize: "9px", letterSpacing: "0.18em" }} className="leading-none mt-0.5">SPORT & TERRITOIRE</div>
+            <TrofizWordmark className="h-5 w-auto" color="var(--cream)" />
+            <div style={{ color: "var(--gold)", fontSize: "9px", letterSpacing: "0.18em" }} className="leading-none mt-1">SPORT & TERRITOIRE</div>
           </div>
         </a>
 
