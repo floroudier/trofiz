@@ -147,7 +147,7 @@ export default function Contact({ defaultType }: ContactProps) {
 
             <p style={{ color: "var(--text-mid)" }} className="text-xs leading-relaxed">
               Vos informations servent uniquement à répondre à votre demande. Elles ne sont ni vendues ni cédées.{" "}
-              <a href="/mentions-legales" style={{ color: "var(--bordeaux)" }} className="underline">
+              <a href="/confidentialite" style={{ color: "var(--bordeaux)" }} className="underline">
                 En savoir plus sur vos données
               </a>
             </p>

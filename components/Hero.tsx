@@ -7,13 +7,6 @@ export default function Hero({ onClubClick, onSponsorClick }: HeroProps) {
   return (
     <section style={{ background: "var(--bordeaux)" }} className="pt-20 pb-24 px-6 text-center">
       <div className="max-w-3xl mx-auto">
-        <div
-          style={{ color: "var(--gold-bright)", borderColor: "var(--gold-bright)" }}
-          className="inline-block text-xs font-medium tracking-widest uppercase border px-4 py-1.5 rounded-full mb-8"
-        >
-          Mécénat et partenariat sportif local
-        </div>
-
         <h1 className="text-white text-3xl sm:text-4xl md:text-5xl font-semibold leading-tight mb-5">
           Clubs amateurs et entreprises locales : on crée le partenariat,{" "}
           <em style={{ color: "var(--gold-bright)" }} className="not-italic">on sécurise le montage.</em>
@@ -43,7 +36,7 @@ export default function Hero({ onClubClick, onSponsorClick }: HeroProps) {
         <div className="flex justify-center gap-6 sm:gap-12 mt-12 pt-8 border-t border-white/15">
           {[
             { val: "60 %", label: "de réduction d'impôt sur la part don" },
-            { val: "0 €", label: "pour le club avant signature" },
+            { val: "0 €", label: "à payer par le club avant signature" },
             { val: "2", label: "contrats clairs : don et partenariat" },
           ].map(({ val, label }) => (
             <div key={label} className="text-center max-w-[9rem]">

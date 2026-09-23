@@ -7,10 +7,7 @@ export default function Footer() {
         <div>
           <div className="flex items-center gap-2 mb-3">
             <TrofizMark className="h-8 w-auto shrink-0" grooveColor="var(--charcoal)" />
-            <div>
-              <TrofizWordmark className="h-[18px] w-auto" color="var(--cream)" />
-              <div style={{ color: "var(--gold)", fontSize: "10px", letterSpacing: "0.1em" }} className="mt-1">SPORT & TERRITOIRE</div>
-            </div>
+            <TrofizWordmark className="h-[18px] w-auto" color="var(--cream)" />
           </div>
           <p className="text-white/70 text-xs max-w-xs leading-relaxed">
             Connecter les clubs sportifs amateurs avec les entreprises qui veulent s’ancrer dans leur territoire.
@@ -21,7 +18,7 @@ export default function Footer() {
           <div>
             <div style={{ color: "var(--gold)" }} className="text-xs font-medium tracking-widest uppercase mb-3">Navigation</div>
             <ul className="space-y-2">
-              {[["#clubs", "Clubs"], ["#entreprises", "Entreprises"], ["#comment", "Comment ça marche"], ["#contact", "Contact"]].map(([href, label]) => (
+              {[["/#clubs", "Clubs"], ["/#entreprises", "Entreprises"], ["/#comment", "Comment ça marche"], ["/#faq", "FAQ"], ["/#contact", "Contact"]].map(([href, label]) => (
                 <li key={href}>
                   <a href={href} className="text-white/75 hover:text-white text-sm transition-colors">{label}</a>
                 </li>
@@ -42,6 +39,8 @@ export default function Footer() {
         <p className="text-white/60 text-xs">© {new Date().getFullYear()} Trofiz. Tous droits réservés.</p>
         <div className="flex items-center gap-4">
           <a href="/mentions-legales" className="text-white/60 hover:text-white text-xs transition-colors">Mentions légales</a>
+          <a href="/confidentialite" className="text-white/60 hover:text-white text-xs transition-colors">Confidentialité</a>
+          <a href="/cgu" className="text-white/60 hover:text-white text-xs transition-colors">CGU</a>
           <p className="text-white/60 text-xs">Sport amateur · Mécénat et partenariat local</p>
         </div>
       </div>

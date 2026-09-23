@@ -33,7 +33,7 @@ export default function MentionsLegales() {
             Mentions légales
           </h1>
           <p style={{ color: "var(--text-mid)" }} className="text-sm mb-10">
-            Conformément à la loi n° 2004-575 du 21 juin 2004 pour la confiance dans l'économie numérique (LCEN).
+            Conformément à la loi n° 2004-575 du 21 juin 2004 pour la confiance dans l’économie numérique (LCEN).
           </p>
 
           <section className="mb-8">
@@ -79,7 +79,7 @@ export default function MentionsLegales() {
               Propriété intellectuelle
             </h2>
             <p style={{ color: "var(--charcoal)" }} className="text-sm leading-relaxed">
-              L'ensemble des contenus présents sur ce site (textes, images, logos, structure) est protégé par le droit d'auteur et appartient à Florian Roudier / Trofiz, sauf mention contraire. Toute reproduction, représentation ou utilisation sans autorisation préalable est interdite.
+              L’ensemble des contenus présents sur ce site (textes, images, logos, structure) est protégé par le droit d’auteur et appartient à Florian Roudier / Trofiz, sauf mention contraire. Toute reproduction, représentation ou utilisation sans autorisation préalable est interdite.
             </p>
           </section>
 
@@ -88,8 +88,8 @@ export default function MentionsLegales() {
               Données personnelles
             </h2>
             <p style={{ color: "var(--charcoal)" }} className="text-sm leading-relaxed">
-              Les informations collectées via le formulaire de contact (nom, organisation, email, téléphone, message) sont utilisées uniquement pour répondre aux demandes des utilisateurs et, le cas échéant, préparer une mise en relation entre un club et une entreprise. Elles ne sont ni vendues ni cédées. Elles sont hébergées et traitées par nos sous-traitants techniques : Vercel (hébergement du site), Google (stockage des demandes) et Anthropic (assistant IA qui aide Trofiz à organiser le suivi des demandes). Elles sont conservées au maximum 3 ans après le dernier échange.<br /><br />
-              Conformément au Règlement Général sur la Protection des Données (RGPD), vous disposez d'un droit d'accès, de rectification et de suppression de vos données. Pour exercer ce droit, contactez-nous à : <a href="mailto:contact@trofiz.fr" style={{ color: "var(--bordeaux)" }} className="underline">contact@trofiz.fr</a>
+              Le traitement de vos données personnelles (formulaire de contact, prospection, sous-traitants, durées de conservation, droits) est décrit dans notre{" "}
+              <a href="/confidentialite" style={{ color: "var(--bordeaux)" }} className="underline">politique de confidentialité</a>.
             </p>
           </section>
 
@@ -98,7 +98,7 @@ export default function MentionsLegales() {
               Cookies
             </h2>
             <p style={{ color: "var(--charcoal)" }} className="text-sm leading-relaxed">
-              Ce site n'utilise pas de cookies de traçage ou publicitaires. Aucune donnée de navigation n'est collectée à des fins analytiques ou commerciales.
+              Ce site n’utilise pas de cookies de traçage ou publicitaires. Aucune donnée de navigation n’est collectée à des fins analytiques ou commerciales.
             </p>
           </section>
 
@@ -107,7 +107,7 @@ export default function MentionsLegales() {
               Limitation de responsabilité
             </h2>
             <p style={{ color: "var(--charcoal)" }} className="text-sm leading-relaxed">
-              Trofiz s'efforce d'assurer l'exactitude des informations publiées sur ce site. Toutefois, la responsabilité de Trofiz ne saurait être engagée en cas d'erreur, d'omission ou d'indisponibilité temporaire du site.
+              Trofiz s’efforce d’assurer l’exactitude des informations publiées sur ce site. Toutefois, la responsabilité de Trofiz ne saurait être engagée en cas d’erreur, d’omission ou d’indisponibilité temporaire du site.
             </p>
           </section>
         </div>
