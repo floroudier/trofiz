@@ -36,11 +36,13 @@ function Crest({ fill, children }: { fill: string; children: React.ReactNode }) 
   );
 }
 
+// Nom sur deux lignes pour les deux camps : écussons et noms restent alignés.
 function Team({ name, children }: { name: string; children: React.ReactNode }) {
+  const [first, ...rest] = name.split(" ");
   return (
     <div className="flex flex-col items-center gap-2.5 text-center">
       {children}
-      <span className="t-display text-[28px] leading-[.9]" style={{ color: "var(--nuit)" }}>{name}</span>
+      <span className="t-display text-[28px] leading-[.9]" style={{ color: "var(--nuit)" }}>{first}<br />{rest.join(" ")}</span>
     </div>
   );
 }
@@ -55,11 +57,11 @@ export default function Fixture() {
       <div className="pb-3.5 border-b" style={{ borderColor: "var(--papier-line)" }}>
         <span className="t-label" style={{ color: "var(--or-encre)" }}>L’affiche de la saison</span>
       </div>
-      <div className="grid grid-cols-[1fr_auto_1fr] items-center gap-3 pt-6">
+      <div className="grid grid-cols-[1fr_auto_1fr] items-start gap-3 pt-6">
         <Team name="Votre club">
           <Crest fill="var(--club)"><BallIcon color="var(--craie)" size={24} /></Crest>
         </Team>
-        <span className="t-display text-[52px]" style={{ color: "var(--or)" }} aria-hidden="true">×</span>
+        <span className="t-display text-[52px] h-[72px] flex items-center" style={{ color: "var(--or)" }} aria-hidden="true">×</span>
         <Team name="Votre entreprise">
           <Crest fill="var(--nuit)"><BriefcaseIcon color="var(--or-vif)" size={24} /></Crest>
         </Team>
