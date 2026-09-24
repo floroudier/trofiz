@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   description: "Trofiz relie les clubs sportifs amateurs et les entreprises de leur territoire, et sécurise le montage : mécénat, partenariat ou les deux. Premier échange sans engagement.",
   openGraph: {
     title: "Trofiz · Mécénat et partenariat sportif local",
-    description: "Clubs amateurs et entreprises locales : on crée le partenariat, on sécurise le montage.",
+    description: "Trofiz fait équipe avec les clubs amateurs et les entreprises de leur ville pour viser les sommets, ensemble : mécénat, partenariat ou les deux, on s’occupe du montage.",
     locale: "fr_FR",
     type: "website",
     url: "https://www.trofiz.fr",
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Trofiz · Mécénat et partenariat sportif local",
-    description: "Clubs amateurs et entreprises locales : on crée le partenariat, on sécurise le montage.",
+    description: "Trofiz fait équipe avec les clubs amateurs et les entreprises de leur ville pour viser les sommets, ensemble : mécénat, partenariat ou les deux, on s’occupe du montage.",
     images: ["https://www.trofiz.fr/og-image.png"],
   },
   alternates: {
