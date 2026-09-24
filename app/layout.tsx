@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     siteName: "Trofiz",
     images: [
       {
-        url: "https://www.trofiz.fr/og-image.png",
+        url: "https://www.trofiz.fr/og-v2.png",
         width: 1200,
         height: 630,
         alt: "Trofiz · Mécénat et partenariat sportif local",
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Trofiz · Mécénat et partenariat sportif local",
     description: "Trofiz fait équipe avec les clubs amateurs et les entreprises de leur ville pour viser les sommets, ensemble : mécénat, partenariat ou les deux, on s’occupe du montage.",
-    images: ["https://www.trofiz.fr/og-image.png"],
+    images: ["https://www.trofiz.fr/og-v2.png"],
   },
   alternates: {
     canonical: "https://www.trofiz.fr",
@@ -59,7 +59,7 @@ const jsonLd = [
     name: "Trofiz",
     url: "https://www.trofiz.fr",
     logo: "https://www.trofiz.fr/logo.png",
-    image: "https://www.trofiz.fr/og-image.png",
+    image: "https://www.trofiz.fr/og-v2.png",
     description: "Trofiz met en relation les clubs sportifs amateurs et les entreprises de leur territoire, et sécurise le montage du partenariat : mécénat (don avec reçu fiscal), partenariat (visibilité facturée) ou les deux.",
     email: "contact@trofiz.fr",
     address: {
